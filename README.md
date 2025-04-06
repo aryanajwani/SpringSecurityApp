@@ -1,2 +1,2 @@
 # SpringSecurityApp
- Implementation of Sessions, Basic uth, JWT Token, OAuth2 using Spring Security
+ Implementation of Sessions, Basic Auth, JWT Token & OAuth2 using Spring Security

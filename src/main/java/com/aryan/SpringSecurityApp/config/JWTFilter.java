@@ -38,7 +38,7 @@ public class JWTFilter extends OncePerRequestFilter{
             String jwtToken = authoriation.substring(7);
 
             try {
-                jwtService.extractAllClaims(jwtToken);
+                jwtService.extractAllClaims(jwtToken); //would throw exception if signature invalid or token exprired
                 String tokenUsername = jwtService.extractUserName(jwtToken);
                 User user = (User) userDetailsService.loadUserByUsername(tokenUsername);
 
@@ -48,12 +48,10 @@ public class JWTFilter extends OncePerRequestFilter{
                     SecurityContextHolder.getContext().setAuthentication(authToken);
                 }
             }
-
             catch( Exception e){
                 e.printStackTrace();
             }
         }
         filterChain.doFilter(request, response);
     }
-    
 }
