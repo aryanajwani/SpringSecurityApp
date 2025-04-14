@@ -32,7 +32,7 @@ public class SecurityConfig {
 
                 // .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
-                .oauth2Login(Customizer.withDefaults())
+                // .oauth2Login(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(csrf -> csrf.disable())
                 .addFilterBefore(jwtFilter(), BasicAuthenticationFilter.class)
